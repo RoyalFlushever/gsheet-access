@@ -19,7 +19,12 @@ development:
 test:
   <<: *default
   database: db/test.sqlite3
-
+  
 production:
-  <<: *default
-  database: db/production.sqlite3
+  adapter: pg
+  encoding: utf8
+  database: bestsf_production
+  pool: 5
+  username: root
+  password: 1234
+  socket: /var/run/mysqld/mysqld.sock
